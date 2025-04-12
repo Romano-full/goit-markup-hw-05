@@ -746,7 +746,7 @@ img {
     color: var(--color-accent-hover);
 }
 
-.checkbox-custom {
+.checkbox {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -764,7 +764,7 @@ img {
 .checkbox-input:checked+.checkbox-label .checkbox-icon {
     fill: var(--color-light);
 }
-.checkbox-input:checked+.checkbox-label .checkbox-custom {
+.checkbox-input:checked+.checkbox-label .checkbox {
     background-color: var(--color-accent-hover);
     border: none;
     fill: var(--color-light);
