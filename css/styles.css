@@ -764,6 +764,11 @@ img {
 .checkbox-input:checked+.checkbox-label .checkbox-icon {
     fill: var(--color-light);
 }
+.checkbox-input:checked+.checkbox-label .checkbox-custom {
+    background-color: var(--color-accent-hover);
+    border: none;
+    fill: var(--color-light);
+}
 
 .checkbox-icon {
     fill: transparent;
