@@ -587,6 +587,7 @@ img {
     background-color: #404bbf;
 }
 
+/* === Modal Overlay === */
 .backdrop {
     position: fixed;
     top: 0;
@@ -607,6 +608,7 @@ img {
     pointer-events: auto;
 }
 
+/* === Modal Window === */
 .modal {
     position: absolute;
     top: 50%;
@@ -614,62 +616,28 @@ img {
     transform: translate(-50%, -50%);
     width: 408px;
     min-height: 584px;
-    background: #fcfcfc;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    padding: 72px 24px 24px 24px;
     box-shadow:
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 72px 24px 24px 24px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-btn {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e7e9fc;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-    background-color: #404bbf;
-    border: none;
-}
-
-.modal-close-icon,
-.form-icon,
-.checkbox-icon {
-    fill: #2e2f42;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-close-btn:hover .modal-close-icon,
-.modal-close-btn:focus .modal-close-icon {
-    fill: #ffffff;
-}
-
+/* === Modal Title === */
 .modal-title {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
-    color: var(--color-dark);
+    color: #2e2f42;
     margin-bottom: 16px;
 }
 
+/* === Form Layout === */
 .modal-form {
     display: flex;
     flex-direction: column;
@@ -683,19 +651,38 @@ img {
     margin-bottom: 16px;
 }
 
+/* === Label === */
 .form-label {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: var(--color-text);
+    color: #8e8f99;
     display: block;
     margin-bottom: 4px;
 }
 
+/* === Input + Icon Wrapper === */
 .form-input-wrapper {
     position: relative;
 }
 
+/* === Input === */
+.form-input {
+    width: 100%;
+    height: 40px;
+    padding-left: 38px;
+    background-color: transparent;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus {
+    border-color: #4d5ae5;
+}
+
+/* === Icon in Input === */
 .form-icon {
     position: absolute;
     left: 16px;
@@ -705,119 +692,137 @@ img {
     fill: #2e2f42;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-input {
-    width: 100%;
-    height: 40px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 4px;
-    background-color: transparent;
-    padding-left: 38px;
-    outline: transparent;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+.form-input:focus~.form-icon {
+    fill: #4d5ae5;
 }
 
-.form-input:focus,
-.form-input:focus-visible {
-    border-color: var(--color-accent);
-}
-
-.form-input:focus~.form-icon,
-.form-input:focus-visible~.form-icon {
-    fill: var(--color-accent);
-}
-
+/* === Textarea === */
 .form-textarea {
     width: 100%;
     height: 120px;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    resize: none;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 4px;
-    background-color: transparent;
-    padding: 8px 16px;
     outline: transparent;
-    resize: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-textarea:focus {
-    border-color: var(--color-accent);
+    border-color: #4d5ae5;
 }
 
+/* === Checkbox === */
 .form-checkbox-wrapper {
     margin-bottom: 24px;
+}
+
+.checkbox-input {
+    display: none;
 }
 
 .checkbox-label {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: var(--color-text);
+    color: #8e8f99;
+    display: flex;
+    align-items: center;
 }
 
 .checkbox-label a {
-    color: var(--color-accent);
+    color: #4d5ae5;
+    text-decoration: underline;
 }
 
+/* === Custom Checkbox Box === */
 .checkbox-custom {
     width: 16px;
     height: 16px;
+    margin-right: 8px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
-    margin-right: 8px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-icon {
+    fill: transparent;
 }
 
 .checkbox-input:checked+.checkbox-label .checkbox-custom {
     background-color: #404bbf;
     border: none;
-    fill: var(--color-light);
-}
-
-.checkbox-input:checked+.checkbox-label .checkbox-custom .checkbox-icon {
     fill: #f4f4fd;
 }
 
+.checkbox-input:checked+.checkbox-label .checkbox-icon {
+    fill: #f4f4fd;
+}
+
+/* === Submit Button === */
 .modal-submit-btn {
     display: block;
+    margin: 0 auto;
     min-width: 169px;
     height: 56px;
-    font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
     color: #ffffff;
-    cursor: pointer;
-    background-color: var(--color-accent);
+    background-color: #4d5ae5;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin: 0 auto;
-}
-.subscribe-icon {
-    margin-left: 16px;
-    fill: #ffffff;
-}
-/* Стандартна логіка: сховано */
-.backdrop {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 250ms ease, visibility 250ms ease;
 }
 
-/* Якщо чекбокс активний — додаємо is-open */
-#modal-toggle:checked~.backdrop {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+    background-color: #404bbf;
+}
+
+/* === Close Button === */
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #e7e9fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 250ms, border 250ms;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-close-icon {
+    fill: #2e2f42;
+    transition: fill 250ms;
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+    fill: #ffffff;
 }
