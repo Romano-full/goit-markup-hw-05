@@ -604,7 +604,32 @@ img {
     fill: #ffffff;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.button {
+    background-color: #4d5ae5;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    min-width: 169px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.button:hover,
+.button:focus {
+    background-color: #404bbf;
+}
+.button {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 /* === Modal Overlay === */
 .backdrop {
     position: fixed;
@@ -775,6 +800,24 @@ img {
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.checkbox-input:checked+.checkbox-custom {
+    background-color: #404bbf;
+    border: none;
+}
+
+.checkbox-input:checked+.checkbox-custom .checkbox-icon {
+    fill: #f4f4fd;
+}
+
+.checkbox-label a {
+    color: #4d5ae5;
+    text-decoration: underline;
+}
+
+.checkbox-label a:hover,
+.checkbox-label a:focus {
+    color: #404bbf;
+}
 
 .checkbox-icon {
     fill: transparent;
@@ -857,4 +900,13 @@ img {
 .checkbox-icon,
 .form-icon {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-submit-btn {
+    /* інші стилі */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-button {
+    /* інші стилі */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
