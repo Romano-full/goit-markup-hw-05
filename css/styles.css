@@ -429,43 +429,36 @@ img {
     --color-text: #8e8f99;
     --color-white: #ffffff;
     --color-light: #f4f4fd;
+    --color-accent-hover: #404bbf;
 }
 
-/* === Universal Button Style === */
-.button,
-.subscribe-button,
-.modal-submit-btn {
+
+.button {
     min-width: 165px;
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    margin: 0 auto;
+    background-color: var(--color-accent);
+    color: var(--color-white);
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    color: var(--color-white);
-    background-color: var(--color-accent);
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 0 auto;
     transition:
         background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
-.button:focus,
-.subscribe-button:hover,
-.subscribe-button:focus,
-.modal-submit-btn:hover,
-.modal-submit-btn:focus {
-    background-color: #404bbf;
+.button:focus {
+    background-color: var(--color-accent-hover);
 }
 
-/* === FOOTER === */
+/* FOOTER */
 .page-footer {
     background-color: var(--color-dark);
     padding: 100px 0;
@@ -496,7 +489,10 @@ img {
     margin-bottom: 16px;
 }
 
-.footer-logo-text,
+.footer-logo-text {
+    color: var(--color-light);
+}
+
 .footer-text {
     color: var(--color-light);
     line-height: 1.5;
@@ -506,11 +502,9 @@ img {
 .footer-socials {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
-.footer-socials-title,
-.subscribe-title {
+.footer-socials-title {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -552,10 +546,19 @@ img {
     fill: var(--color-light);
 }
 
-/* === Subscribe Form === */
+/* Subscribe Section  */
 .subscribe-section {
     display: flex;
     flex-direction: column;
+}
+
+.subscribe-title {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
 }
 
 .subscribe-form {
@@ -587,7 +590,7 @@ img {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* === Modal Window === */
+/* Modal Overlay */
 .backdrop {
     position: fixed;
     top: 0;
@@ -598,7 +601,8 @@ img {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms, visibility 250ms;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -607,6 +611,7 @@ img {
     pointer-events: auto;
 }
 
+/* Modal */
 .modal {
     position: absolute;
     top: 50%;
@@ -616,12 +621,12 @@ img {
     min-height: 584px;
     background-color: #fcfcfc;
     border-radius: 4px;
-    padding: 72px 24px 24px;
+    padding: 72px 24px 24px 24px;
     box-shadow:
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 2px 1px rgba(0, 0, 0, 0.2);
-    transition: transform 250ms;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
@@ -641,6 +646,10 @@ img {
 
 .form-field {
     margin-bottom: 8px;
+}
+
+.form-field-textarea {
+    margin-bottom: 16px;
 }
 
 .form-label {
@@ -664,7 +673,7 @@ img {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     outline: transparent;
-    transition: border-color 250ms;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus {
@@ -678,7 +687,7 @@ img {
     transform: translateY(-50%);
     pointer-events: none;
     fill: var(--color-dark);
-    transition: fill 250ms;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus~.form-icon {
@@ -698,14 +707,14 @@ img {
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
     outline: transparent;
-    transition: border-color 250ms;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-textarea:focus {
     border-color: var(--color-accent);
 }
 
-/* === Checkbox === */
+/* Checkbox */
 .form-checkbox-wrapper {
     margin-bottom: 24px;
 }
@@ -730,7 +739,7 @@ img {
 
 .checkbox-label a:hover,
 .checkbox-label a:focus {
-    color: #404bbf;
+    color: var(--color-accent-hover);
 }
 
 .checkbox-custom {
@@ -743,23 +752,28 @@ img {
     align-items: center;
     justify-content: center;
     fill: transparent;
-    transition: background-color 250ms, border 250ms, fill 250ms;
+    transition:
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-input:checked+.checkbox-custom {
-    background-color: #404bbf;
+.checkbox-input:checked+.checkbox-label .checkbox-custom {
+    background-color: var(--color-accent-hover);
     border: none;
+    fill: var(--color-light);
 }
 
-.checkbox-input:checked+.checkbox-custom .checkbox-icon {
+.checkbox-input:checked+.checkbox-label .checkbox-icon {
     fill: var(--color-light);
 }
 
 .checkbox-icon {
     fill: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* === Modal Close Button === */
+/* Close Button */
 .modal-close-btn {
     position: absolute;
     top: 24px;
@@ -779,7 +793,7 @@ img {
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-    background-color: #404bbf;
+    background-color: var(--color-accent-hover);
     border: none;
 }
 
