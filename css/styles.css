@@ -747,7 +747,7 @@ img {
     color: var(--color-accent-hover);
 }
 
-span.checkbox {
+.form-checkbox-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
