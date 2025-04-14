@@ -741,6 +741,11 @@ img {
     color: var(--color-accent);
     text-decoration: underline;
 }
+.modal-check:checked+.form-label .form-checkbox-icon {
+    background-color: var(--accent-color);
+    border: none;
+    fill: var(--light-color);
+}
 
 .checkbox-label a:hover,
 .checkbox-label a:focus {
@@ -748,14 +753,14 @@ img {
 }
 
 .form-checkbox-icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    margin-right: 8px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 2px;
     fill: transparent;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -770,7 +775,14 @@ img {
     border: none;
     fill: var(--color-light);
 }
-
+.policy-link {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+:root {
+    --accent-color: #404bbf;
+    --light-color: #f4f4fd;
+}
 .checkbox-icon {
     fill: transparent;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
