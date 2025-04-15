@@ -775,6 +775,10 @@ img {
     border: none;
     fill: var(--color-light);
 }
+:root {
+    --accent-color: #404bbf;
+    --light-color: #f4f4fd;
+}
 .policy-link {
     color: var(--accent-color);
     text-decoration: underline;
