@@ -448,15 +448,17 @@ img {
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    max-width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .footer-brand {
-    margin-right: 20px;
     max-width: 264px;
+    margin-right: 116px;
 }
 
 .footer-logo {
@@ -482,8 +484,8 @@ img {
 }
 
 .footer-socials {
-    display: flex;
-    flex-direction: column;
+    width: 208px;
+    margin-right: 80px;
 }
 
 .footer-socials-title {
@@ -530,8 +532,7 @@ img {
 
 /* Subscribe Section  */
 .subscribe-section {
-    display: flex;
-    flex-direction: column;
+    width: 453px;
 }
 
 .subscribe-title {
