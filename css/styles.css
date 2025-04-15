@@ -741,8 +741,8 @@ img {
     color: var(--color-accent);
     text-decoration: underline;
 }
-.modal-check:checked+.form-label .form-checkbox-icon {
-    background-color: var(--accent-color);
+.modal-check:checked + .form-label .form-checkbox-icon {
+    background-color: var(--checkbox-color);
     border: none;
     fill: var(--light-color);
 }
@@ -776,7 +776,8 @@ img {
     fill: var(--color-light);
 }
 :root {
-    --accent-color: #404bbf;
+    --accent-color: #4d5ae5;
+    --checkbox-color: #404bbf;
     --light-color: #f4f4fd;
 }
 .policy-link {
